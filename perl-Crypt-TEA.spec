@@ -8,12 +8,12 @@ Summary:	Crypt::TEA Perl module - Tiny Encryption Algorithm
 Summary(pl):	Modu³ Perla Crypt::TEA - Tiny Encryption Algorithm
 Name:		perl-Crypt-TEA
 Version:	1.25
-Release:	1
+Release:	2
 License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl-devel >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,7 +40,8 @@ mo¿na znale¼æ pod adresem:
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make} OPTIMIZE="%{rpmcflags}"
 %{!?_without_tests:%{__make} test}
 
@@ -56,8 +57,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_sitearch}/Crypt/TEA.pm
-%dir %{perl_sitearch}/auto/Crypt/TEA
-%{perl_sitearch}/auto/Crypt/TEA/*.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Crypt/TEA/*.so
+%{perl_vendorarch}/Crypt/TEA.pm
+%dir %{perl_vendorarch}/auto/Crypt/TEA
+%{perl_vendorarch}/auto/Crypt/TEA/*.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Crypt/TEA/*.so
 %{_mandir}/man3/*
