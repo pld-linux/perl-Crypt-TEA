@@ -3,8 +3,8 @@
 %bcond_without	tests	# Do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Crypt
-%define	pnam	TEA
+%define		pdir	Crypt
+%define		pnam	TEA
 Summary:	Crypt::TEA Perl module - Tiny Encryption Algorithm
 Summary(pl):	Modu³ Perla Crypt::TEA - Tiny Encryption Algorithm
 Name:		perl-Crypt-TEA
