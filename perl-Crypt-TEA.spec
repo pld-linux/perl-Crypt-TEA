@@ -30,7 +30,7 @@ at <http://www.ftp.cl.cam.ac.uk/ftp/papers/djw-rmn/djw-rmn-tea.html>.
 %description -l pl
 Ten modu³ jest implementacj± szyfrowania TEA (Tiny Encryption
 Algorithm - niewielki algorytm szyfrowania). Obs³uguje interfejs
-Crypt::CBC. TEA jest 64-bitowym symetryczym szyfrem blokowym ze
+Crypt::CBC. TEA jest 64-bitowym symetrycznym szyfrem blokowym ze
 128-bitowym kluczem i zmienn± liczb± kroków (zaleca siê 32). Wymaga
 ma³o czasu do uruchomienia i dla zapewnienia bezpieczeñstwa polega na
 du¿ej liczbie kroków, a nie skomplikowanym algorytmie. TEA zosta³
