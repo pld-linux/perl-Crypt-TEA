@@ -1,0 +1,63 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
+%include	/usr/lib/rpm/macros.perl
+%define		pdir	Crypt
+%define		pnam	TEA
+Summary:	Crypt::TEA Perl module - Tiny Encryption Algorithm
+Summary(pl):	Modu³ Perla Crypt::TEA - Tiny Encryption Algorithm
+Name:		perl-Crypt-TEA
+Version:	1.25
+Release:	1
+License:	Artistic
+Group:		Development/Languages/Perl
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+BuildRequires:	perl-devel >= 5.6
+BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%description
+This module implements TEA (Tiny Encryption Algorithm) encryption. It
+supports the Crypt::CBC interface. TEA is a 64-bit symmetric block
+cipher with a 128-bit key and a variable number of rounds (32 is
+recommended). It has a low setup time, and depends on a large number
+of rounds for security, rather than a complex algorithm. It was
+developed by David J. Wheeler and Roger M. Needham, and is described
+at <http://www.ftp.cl.cam.ac.uk/ftp/papers/djw-rmn/djw-rmn-tea.html>.
+
+%description -l pl
+Ten modu³ jest implementacj± szyfrowania TEA (Tiny Encryption
+Algorithm - niewielki algorytm szyfrowania). Obs³uguje interfejs
+Crypt::CBC. TEA jest 64-bitowym symetryczym szyfrem blokowym ze
+128-bitowym kluczem i zmienn± liczb± kroków (zaleca siê 32). Wymaga
+ma³o czasu do uruchomienia i dla zapewnienia bezpieczeñstwa polega na
+du¿ej liczbie kroków, a nie skomplikowanym algorytmie. TEA zosta³
+opracowany przez Davida J. Wheelera i Rogera M. Needhama, a jego opis
+mo¿na znale¼æ pod adresem:
+<http://www.ftp.cl.cam.ac.uk/ftp/papers/djw-rmn/djw-rmn-tea.html>.
+
+%prep
+%setup -q -n %{pdir}-%{pnam}-%{version}
+
+%build
+perl Makefile.PL
+%{__make} OPTIMIZE="%{rpmcflags}"
+%{!?_without_tests:%{__make} test}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc Changes README
+%{perl_sitearch}/Crypt/TEA.pm
+%dir %{perl_sitearch}/auto/Crypt/TEA
+%{perl_sitearch}/auto/Crypt/TEA/*.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Crypt/TEA/*.so
+%{_mandir}/man3/*
