@@ -6,7 +6,7 @@
 %define		pdir	Crypt
 %define		pnam	TEA
 Summary:	Crypt::TEA Perl module - Tiny Encryption Algorithm
-Summary(pl):	Modu≥ Perla Crypt::TEA - Tiny Encryption Algorithm
+Summary(pl.UTF-8):   Modu≈Ç Perla Crypt::TEA - Tiny Encryption Algorithm
 Name:		perl-Crypt-TEA
 Version:	1.25
 Release:	3
@@ -27,15 +27,15 @@ of rounds for security, rather than a complex algorithm. It was
 developed by David J. Wheeler and Roger M. Needham, and is described
 at <http://www.ftp.cl.cam.ac.uk/ftp/papers/djw-rmn/djw-rmn-tea.html>.
 
-%description -l pl
-Ten modu≥ jest implementacj± szyfrowania TEA (Tiny Encryption
-Algorithm - niewielki algorytm szyfrowania). Obs≥uguje interfejs
+%description -l pl.UTF-8
+Ten modu≈Ç jest implementacjƒÖ szyfrowania TEA (Tiny Encryption
+Algorithm - niewielki algorytm szyfrowania). Obs≈Çuguje interfejs
 Crypt::CBC. TEA jest 64-bitowym symetrycznym szyfrem blokowym ze
-128-bitowym kluczem i zmienn± liczb± krokÛw (zaleca siÍ 32). Wymaga
-ma≥o czasu do uruchomienia i dla zapewnienia bezpieczeÒstwa polega na
-duøej liczbie krokÛw, a nie skomplikowanym algorytmie. TEA zosta≥
+128-bitowym kluczem i zmiennƒÖ liczbƒÖ krok√≥w (zaleca siƒô 32). Wymaga
+ma≈Ço czasu do uruchomienia i dla zapewnienia bezpiecze≈Ñstwa polega na
+du≈ºej liczbie krok√≥w, a nie skomplikowanym algorytmie. TEA zosta≈Ç
 opracowany przez Davida J. Wheelera i Rogera M. Needhama, a jego opis
-moøna znaleºÊ pod adresem:
+mo≈ºna znale≈∫ƒá pod adresem:
 <http://www.ftp.cl.cam.ac.uk/ftp/papers/djw-rmn/djw-rmn-tea.html>.
 
 %prep
