@@ -65,6 +65,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README
 %{perl_vendorarch}/Crypt/TEA.pm
 %dir %{perl_vendorarch}/auto/Crypt/TEA
-%{perl_vendorarch}/auto/Crypt/TEA/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Crypt/TEA/*.so
 %{_mandir}/man3/*
