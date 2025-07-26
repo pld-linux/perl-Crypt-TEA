@@ -8,7 +8,7 @@ Summary:	Crypt::TEA Perl module - Tiny Encryption Algorithm
 Summary(pl.UTF-8):	Moduł Perla Crypt::TEA - Tiny Encryption Algorithm
 Name:		perl-Crypt-TEA
 Version:	1.25
-Release:	20
+Release:	21
 License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Crypt/%{pdir}-%{pnam}-%{version}.tar.gz
